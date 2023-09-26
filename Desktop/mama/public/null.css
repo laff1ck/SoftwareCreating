@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav, footer, header, aside{ 
+    display: block; 
+} 
+input, button, textarea{ 
+    font-family: inherit;
+    outline: none;
+    border: none; 
+} 
+button{ 
+    cursor: pointer; 
+} 
+a, a:visited{ 
+    text-decoration: none; 
+} 
+ul li { 
+    list-style: none; 
+}
