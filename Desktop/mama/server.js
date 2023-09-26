@@ -14,3 +14,8 @@ app.listen(port, () => {
   console.log('Скопируйте порт и вставьте ссылку в браузер');
 });
 
+const helmet = require('helmet');
+app.use(helmet()); // Защита заголовков
+
+const compression = require('compression');
+app.use(compression()); // Сжатие ответов
