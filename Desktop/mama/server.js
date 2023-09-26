@@ -11,5 +11,6 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log('Сервер запущен на порту ${port}');
+  console.log('Скопируйте порт и вставьте ссылку в браузер');
 });
 
