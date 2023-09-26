@@ -1,46 +1,13 @@
-// const http = require('http');
-// const fs = require('fs');
-// const hostname = '127.0.0.1'; // Локальный хост
-// const port = 3000; // Порт, который будет прослушивать сервер
-
-// const server = http.createServer((req, res) => {
-//   const stream = fs.createReadStream('index.html');
-//   stream.pipe(res)
-//   // Обработка запросов здесь
-//   res.statusCode = 200; // Код успешного ответа
-//   res.setHeader('Content-Type', 'text/plain');
-//   res.end('Hello mama\n');
-// });
-
-// server.listen(port, hostname, () => {
-//   console.log(`Сервер запущен по адресу http://${hostname}:${port}/`);
-// });
-
-// const express = require('express');
-// const app = express();
-
-
-// // Указываем Express использовать статические файлы
-// app.use(express.static('mama'));
-
-// // Обработчик маршрута для вашего сайта
-// app.get('/mama', (req, res) => {
-//   res.sendFile(__dirname + '/mama/index.html');
-// });
-
-// app.listen(port, () => {
-//   console.log('Сервер запущен на порту ${port}');
-// });
-const express = require('express');
-const app = express();
-const port = 3000;
+const express = require('express'); //Здесь мы импортируем библиотеку Express.js и присваиваем ее переменной express. Express.js - это популярный фреймворк для создания веб-приложений на Node.js.
+const app = express(); // Мы создаем новый экземпляр приложения Express, вызывая функцию express() и присваивая его переменной app. Этот объект app будет представлять наше веб-приложение.
+const port = 3000; // Здесь мы устанавливаем порт, на котором будет работать наш сервер. В данном случае, сервер будет слушать запросы на порту 3000.
 
 // Настроим Express для обработки статических файлов из папки public
-app.use(express.static('public'));
+app.use(express.static('public'));//Эта строка настраивает Express для обработки статических файлов, которые находятся в папке public. Это может включать в себя статические HTML, CSS, JavaScript и другие файлы, которые клиентский браузер может запросить.
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
-});
+});//Этот блок кода определяет обработчик маршрута для HTTP GET запросов к корневому пути ('/'). Когда пользователь открывает главную страницу сайта, будет выполнена функция, переданная во втором аргументе. В данном случае, мы отправляем файл index.html, находящийся в текущей директории (__dirname), в ответ на запрос.
 
 app.listen(port, () => {
   console.log('Сервер запущен на порту ${port}');
